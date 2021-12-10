@@ -573,8 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 088b11108164f034183b692e1f83c140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xInitialForce: 30
-  yInitialForce: 15
+  speed: 10
 --- !u!23 &1837395658
 MeshRenderer:
   m_ObjectHideFlags: 0
