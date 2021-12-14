@@ -30,32 +30,11 @@ public class BallControl : MonoBehaviour
 
         curPosition += offset;
 
-        //transform.position = curPosition;
-
-        //if (new Vector2(transform.position.x, transform.position.y) != curScreenPoint)
-        //{
-            transform.Translate(new Vector2(curPosition.x, curPosition.y).normalized * speed * Time.deltaTime);
-        //}
-        //else
-        //{
-        //    transform.Translate(new Vector2(0, 0));
-        //}
+        transform.Translate(new Vector2(curPosition.x, curPosition.y).normalized * speed * Time.deltaTime);
     }
 
     private void OnMouseDown()
     {
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Input.mousePosition.y));
     }
-
-    //private void OnMouseDrag()
-    //{
-    //    Vector2 curScreenPoint = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-
-    //    Vector2 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint);
-
-    //    curPosition += offset;
-
-    //    //transform.position = curPosition;
-    //    transform.Translate(new Vector2(curPosition.x, curPosition.y) * speed * Time.deltaTime);
-    //}
 }

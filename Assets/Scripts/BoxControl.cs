@@ -5,6 +5,7 @@ using UnityEngine;
 public class BoxControl : MonoBehaviour
 {
     public GameObject _prefab;
+    public GameObject _ball;
 
     private Vector2 _rand;
     
