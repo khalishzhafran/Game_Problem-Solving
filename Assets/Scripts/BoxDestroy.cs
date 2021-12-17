@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class BoxDestroy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static BoxDestroy Instance;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        if (Instance == null)
+        {
+            Instance = this;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,7 +19,8 @@ public class BoxDestroy : MonoBehaviour
         if (collision.tag == "Player")
         {
             collision.isTrigger = true;
-            Destroy(this.gameObject);
+
+            gameObject.SetActive(false);
 
             ScoreManager._score++;
 
