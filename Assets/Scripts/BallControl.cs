@@ -4,11 +4,21 @@ using UnityEngine;
 
 public class BallControl : MonoBehaviour
 {
+    public static BallControl Instance;
+
     public float speed;
 
     Vector2 curScreenPoint;
     Vector2 curPosition;
     Vector2 offset;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
